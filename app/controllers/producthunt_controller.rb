@@ -8,13 +8,18 @@ class ProducthuntController < ApplicationController
   end
 
   def create
-  @product = Product.new(product_params)
-  if @product.save
-    redirect_to products_path, notice: "El producto fue publicado con éxito"
-  else
-    render :new
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to products_path, notice: "El producto fue publicado con éxito"
+    else
+      render :new
+    end
   end
-end
+
+  def show
+    @product = Product.find(params[:id])
+  end
+
 
 private
   def product_params
