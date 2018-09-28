@@ -12,14 +12,13 @@ class ProducthuntController < ApplicationController
     if @product.save
       redirect_to products_path, notice: "El producto fue publicado con éxito"
     else
-      render :new
+     render :new
     end
   end
 
-  def show
+  def edit
     @product = Product.find(params[:id])
   end
-
 
 private
   def product_params
