@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -11,9 +12,11 @@ class UsersController < ApplicationController
       render :new
     end
   end
-end
+
 
 private
   def user_params
     params.require(:user).permit(:email, :password, :name, :twitter_handle)
   end
+
+end

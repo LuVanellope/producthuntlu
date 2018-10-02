@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :name, limit: 100
       t.string :twitter_handle, limit: 50
 
-      t.timestamps null: false 
+      t.timestamps null: false
     end
   end
 end

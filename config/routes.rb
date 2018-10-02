@@ -1,8 +1,9 @@
-Rails.application.routes.draw do
-  resources :users, only:[:new, :create]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :products
-  root 'products#index'
+  Rails.application.routes.draw do
+    root 'products#index'
 
+    get 'login', to:'session#new'
+    post 'login', to: 'session#create'
+    resources :users, only:[:new, :create]
+    resources :products
 
-end
+  end
